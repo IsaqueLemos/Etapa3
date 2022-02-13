@@ -1,0 +1,574 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* Main Configs */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+    --menu-text: #929292;
+    --super-banner-background: #569ac4;
+    --about-us-background: #6ab7e7;
+    --footer-background: #274657;
+    --yellow: #ffc800;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: hsl(0, 0%, 100%);
+    font-weight: 300;
+    transition: all 300ms ease;
+}
+
+/* Header styling */
+header {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 0 5%;
+    font-size: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 200px;
+}
+
+#mobile-button {
+    display: none;
+}
+
+.menu {
+    margin-top: 35px;
+    display: flex;
+    list-style: none;
+}
+
+.menu > li:nth-child(2) {
+    margin: 0 45px;
+}
+
+.menu > li:nth-child(4) {
+    margin-right: 45px;
+}
+
+.sub-menu {
+    display: block;
+    line-height: 1.3;
+    list-style: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 300ms ease;
+}
+
+.menu li:hover .sub-menu {
+    visibility: visible;
+    opacity: 1;
+} 
+
+.menu a {
+    color: var(--menu-text);
+    text-decoration: none;
+    transition: color 300ms ease-in-out;
+}
+
+.menu a:hover {
+    color: var(--super-banner-background);
+}
+
+.menu > li > a {
+    font-weight: bold;
+}
+
+/* Sections Config */
+
+section {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 50px 30px;
+}
+
+/* Super-Banner Styling */
+.super-banner {
+    text-align: center;
+    background-image: url(imagens/super-banner-background.png);
+    background-position: center;
+    background-repeat: repeat-x;
+    background-color: var(--super-banner-background);
+    width: 100%;
+    min-height: 400px;
+}
+
+.super-banner h1 {
+    font-size: 2.2em;
+    line-height: 1.2;
+    max-width: 475px;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+.super-banner p {
+    font-size: 1.5em;
+    max-width: 915px;
+}
+
+.super-banner p strong {
+    color: var(--yellow);
+}
+
+.super-banner button {
+    background-color: var(--yellow);
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    transition: all 300ms ease;
+}
+
+.super-banner button:hover {
+    background-color: #ffc80034;
+}
+
+.super-banner button a {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: white;
+}
+
+/* About-Us Styling */
+.about-us {
+    min-height: 600px;
+    background-color: var(--about-us-background);
+    text-align: center;
+}
+
+.about-us p {
+    max-width: 840px;
+}
+
+.title-content {
+    text-align: center;
+}
+
+.title {
+    color: var(--super-banner-background);
+    padding: 5px;
+    font-size: 2.2em;
+    text-transform: uppercase;
+}
+
+.about-us > .title-content > .title {
+    color: white;
+}
+
+.title-bar {
+    display: inline-block;
+    background-color: var(--yellow);
+    border-radius: 4px;
+    width: 125px;
+    height: 9px;
+}
+
+.about-us > .title-content > .title-bar {
+    background-color: white;
+}
+
+.card-content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    background-color: hsl(0, 0%, 100%);
+    width: 240px;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.card p {
+    font-weight: 500;
+    text-align: start;
+    color: #454545;
+}
+
+.about-us #p2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.about-us #p2 a {
+    color: var(--yellow);
+    transition: font-size 300ms ease;
+}
+
+.about-us #p2 a:hover {
+    font-size: 1rem;
+}
+
+/* Health-Benefits Styling */
+.health-benefits {
+    min-height: 580px;
+    gap: 50px;
+}
+
+.carousel {
+    display: flex;
+    gap: 20px;
+    display: none;
+}
+
+.carousel-cards {
+    display: grid;
+    grid-template: auto / auto;
+    justify-content: center;
+    align-content: center;
+    width: 250px;
+    height: 222px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 5px 10px 50px rgb(220, 220, 220);
+}
+
+/* Products Styling */
+.products {
+    min-height: 465px;
+    background-color: hsl(0, 0%, 100%);
+    gap: 50px;
+}
+
+.products-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.products-card {
+    position: relative;
+    width: 230px;
+    height: 150px;
+    text-align: center;
+}
+
+.ans-code {
+    display: inline-block;
+    background-color: black;
+    width: max-content;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 5px 10px;
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Contact-us Styling */
+.contact-group {
+    min-height: 1570px;
+    background-image: url(imagens/contact-background.png);
+    background-size: cover;
+    display: grid;
+    grid-template: 1fr / 1fr;
+    justify-content: flex-start;
+    padding: 5% 15%;
+}
+
+.contact-us {
+    padding: 0;
+    max-width: 580px;
+    height: max-content;
+}
+
+.contact-us > .title-content > .title {
+    color: hsl(0, 0%, 100%);
+}
+
+/* Form Styling */
+form {
+    width: 100%;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+form div label {
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: hsl(0, 0%, 100%);
+    transition: background-color 500ms ease;
+}
+
+input:focus, textarea:focus {
+    background-color: hsla(0, 0%, 100%, 0.3);
+    color: hsl(0, 0%, 100%);
+    outline: 0;
+}
+
+input:focus::placeholder, textarea:focus::placeholder {
+    color: white;
+}
+
+#form-button {
+    display: block;
+    width: 155px;
+    height: 45px;
+    background-color: #69cf61;
+    color: hsl(0, 0%, 100%);
+    font-weight: 900;
+    margin-left: auto;
+}
+
+#form-button:hover {
+    background-color: #68cf616b;
+    cursor: pointer;
+}
+
+/* Contact Box Styling */
+.contact-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 500px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 4px;
+    padding: 40px 20px 20px;
+    margin-top: 30px;
+}
+
+.contact-box > div {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 25px 0;
+}
+
+.contact-box > div > div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    margin-right: 5px;
+}
+
+.contact-box h1 {
+    max-width: 430px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 2em;
+    color: #5e5e5e;
+    font-weight: 500;
+}
+
+.contact-box h1 strong {
+    color: #569ac4;
+    font-weight: 900;
+}
+
+.box-titles {
+    color: var(--menu-text);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.phones {
+    color: #569ac4;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.phones a {
+    color: #569ac4;
+    text-decoration: none;
+}
+
+.whats {
+    border-top: 1px solid #b9b9b949;
+    border-bottom: 1px solid #b9b9b949;
+    padding: 0;
+}
+
+.whats a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 65px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.4em;
+    font-weight: 600;
+    background-color: #27d18f;
+    color: white;
+    border-radius: 4px;
+    transition: background-color 300ms ease;
+}
+
+.whats a:hover {
+    background-color: #30c58c;
+}
+
+.whats-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #29b47e;
+    height: 100%;
+    width: 74px;
+    border-radius: 4px 0 0 4px;
+}
+
+.whats-logo img {
+    transform: scale(0.9);
+}
+
+.whats-number {
+    width: 100%;
+    text-align: center;
+}
+
+.address a {
+    text-decoration: none;
+}
+
+.address address {
+    color: #6ab7e7;
+    font-size: 0.8em;
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Footer Styling */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 400;
+    background-color: var(--footer-background);
+    padding: 10px;
+}
+
+@media screen and (max-width: 900px) {
+
+    header {
+        height: 80px;
+    }
+
+    .logo img {
+        width: 150px;
+    }
+
+    #mobile-button {
+        display: initial;
+        background-image: url(imagens/bx-menu.png);
+        background-size: cover;
+        padding: 25px;
+        border: none;
+        background-color: transparent;
+    }
+
+    nav {
+        width: 100%;
+        height: 0px;
+        overflow: hidden;
+        visibility: hidden;
+        background-color: #f5f5f5;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        transition: .6s;
+    }
+
+    nav.toggle {
+        height: 320px;
+        visibility: visible;
+    }
+
+    .menu {
+        margin: 0;
+        display: block;
+        text-align: center;
+        font-size: 1.3em;
+    }
+
+    .menu li {
+        margin: 30px;
+    }
+
+    .menu li a {
+        padding: 15px 50px;
+    }
+
+    .menu > li:nth-child(2), .menu > li:nth-child(4) {
+        margin: 0;
+    }
+
+    .sub-menu {
+        display: none;
+    }
+
+    .contact-group {
+        padding: 5%;
+    }
+
+    .contact-us {
+        max-width: none;
+        width:  100%;
+    }
+
+}
+
+@media screen and (max-width: 525px) {
+    .super-banner h1 {
+        font-size: 1.6em;
+    }
+
+    .super-banner p {
+        font-size: 1.2em;
+    }
+
+    .contact-box h1 {
+        font-size: 1.5em;
+    }
+
+    .phones {
+        font-size: 4vw
+    }
+
+    .whats a {
+        font-size: 4vw;
+    }
+}
