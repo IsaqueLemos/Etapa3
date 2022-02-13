@@ -1,9 +1,11 @@
 /* Header Menu */
 const mobileButton = document.querySelector('#mobile-button');
-mobileButton.addEventListener('click', () => {
+mobileButton.addEventListener('click', changeMenuClass)
+
+function changeMenuClass() {
     const menu = document.getElementsByTagName('nav')[0];
     menu.classList.toggle('toggle')
-})
+}
 
 
 /* Links Page Scroll */
@@ -13,6 +15,7 @@ const linkButton = document.querySelector('#link-button')
 
 links.forEach(item => {
     item.addEventListener('click', goToSection)
+    item.addEventListener('click', changeMenuClass)
 });
 
 linkButton.addEventListener('click', goToSection)
@@ -22,8 +25,6 @@ function goToSection(event) {
     const element = event.target;
     const id = element.getAttribute('href');
     const pos = document.querySelector(id).offsetTop;
-    const menu = document.getElementsByTagName('nav')[0];
-    menu.classList.toggle('toggle')
 
     window.scroll({
         top: pos - 120,
@@ -32,3 +33,33 @@ function goToSection(event) {
 }
 
 /* Carousel */
+$(document).ready(function(){
+  $('.carousel').slick({
+    centerMode: true,
+    centerPadding: '60px',
+    slidesToShow: 3,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    dots: true,
+    prevArrow: '<div class="backbutton"></div>',
+    nextArrow: '<div class="nextbutton"></div>',
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          centerMode: true,
+          ininite: true,
+          slidesToShow: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+        }
+      }
+    ]
+  });
+});

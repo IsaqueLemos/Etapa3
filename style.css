@@ -35,7 +35,7 @@ header {
     font-size: 14px;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 9999;
 }
 
 .logo img {
@@ -231,26 +231,83 @@ section {
 
 /* Health-Benefits Styling */
 .health-benefits {
+    position: relative;
+    padding: 20px 0;
     min-height: 580px;
     gap: 50px;
 }
 
+.backbutton, .nextbutton {
+    background-color: #569ac456;
+    padding: 30px 15px;
+    background-size: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    transition: all 200ms ease;
+}
+
+.backbutton:hover, .nextbutton:hover {
+    background-color: #569ac4;
+    cursor: pointer;
+}
+
+.backbutton {
+    background-image: url(imagens/arrow-left.png);
+    border-radius: 0 4px 4px 0;
+    left: 0;
+}
+
+.nextbutton {
+    background-image: url(imagens/arrow-rigth.png);
+    border-radius: 4px 0 0 4px;
+    right: 0;
+}
+
 .carousel {
     display: flex;
-    gap: 20px;
-    display: none;
+    max-width: 100%;
 }
 
 .carousel-cards {
-    display: grid;
-    grid-template: auto / auto;
-    justify-content: center;
-    align-content: center;
-    width: 250px;
-    height: 222px;
-    background-color: white;
+    position: relative;
+    background-color: hsl(0, 0%, 100%);
+    margin: 30px 20px;
+    padding: 100px 110px;
     border-radius: 12px;
-    box-shadow: 5px 10px 50px rgb(220, 220, 220);
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 5px 10px 20px rgb(225, 225, 225, 0.4);
+}
+
+.carousel-cards img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#qualicorp {
+    background-image: url(imagens/carousel/logo-qualicorp.png);
+}
+
+#allcare {
+    background-image: url(imagens/carousel/logo-allcare.png);
+}
+
+#affix {
+    background-image: url(imagens/carousel/logo-affix.png);
+}
+
+#qvsaude {
+    background-image: url(imagens/carousel/logo-qvsaude.png);
+}
+
+#clubecare {
+    background-image: url(imagens/carousel/logo-clubecare.png);
 }
 
 /* Products Styling */
@@ -498,8 +555,10 @@ footer {
     #mobile-button {
         display: initial;
         background-image: url(imagens/bx-menu.png);
-        background-size: cover;
-        padding: 25px;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 30px;
         border: none;
         background-color: transparent;
     }

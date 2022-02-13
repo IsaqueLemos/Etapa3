@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- Biblioteca Carrosel slick -->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
     <title>ANC - Associação Nacional dos Comerciários</title>
 </head>
 <body>
@@ -86,22 +90,21 @@
                 <h1 class="title">Benefícios em saúde</h1>
                 <div class="title-bar"></div>
             </div>
-            d
             <div class="carousel">
-                <div class="carousel-cards">
-                    <img src="imagens/carousel/logo-qualicorp.png" alt="Qualicorp">
+                <div class="carousel-cards" id="qualicorp">
+                    <img src="imagens/carousel/logo-qualicorp.png">
                 </div>
-                <div class="carousel-cards">
-                    <img src="imagens/carousel/logo-allcare.png" alt="Allcare">
+                <div class="carousel-cards" id="allcare">
+                    <img src="imagens/carousel/logo-allcare.png">
                 </div>
-                <div class="carousel-cards">
-                    <img src="imagens/carousel/logo-affix.png" alt="Affix">
+                <div class="carousel-cards" id="affix">
+                    <img src="imagens/carousel/logo-affix.png" alt="">
                 </div>
-                <div class="carousel-cards">
-                    <img src="imagens/carousel/logo-qvsaude.png" alt="QV Saúde">
+                <div class="carousel-cards" id="qvsaude">
+                    <img src="imagens/carousel/logo-qvsaude.png" alt="">
                 </div>
-                <div class="carousel-cards">
-                    <img src="imagens/carousel/logo-clubecare.png" alt="Clube Care">
+                <div class="carousel-cards" id="clubecare">
+                    <img src="imagens/carousel/logo-clubecare.png" alt="">
                 </div>
             </div>
         </section>
@@ -198,6 +201,10 @@
         <img src="imagens/logo-marlin.png" alt="Marlin">
     </footer>
 
-<script src="app.js"></script>
+    <!-- Adicionando as biblioteca e o script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="app.js"></script>
+
 </body>
 </html>
