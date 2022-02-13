@@ -3,8 +3,8 @@ const mobileButton = document.querySelector('#mobile-button');
 mobileButton.addEventListener('click', changeMenuClass)
 
 function changeMenuClass() {
-    const menu = document.getElementsByTagName('nav')[0];
-    menu.classList.toggle('toggle')
+  const menu = document.getElementsByTagName('nav')[0];
+  menu.classList.toggle('toggle')
 }
 
 
@@ -14,29 +14,29 @@ const links = document.querySelectorAll('.links')
 const linkButton = document.querySelector('#link-button')
 
 links.forEach(item => {
-    item.addEventListener('click', goToSection)
-    item.addEventListener('click', changeMenuClass)
+  item.addEventListener('click', goToSection)
+  item.addEventListener('click', changeMenuClass)
 });
 
 linkButton.addEventListener('click', goToSection)
 
 function goToSection(event) {
-    event.preventDefault();
-    const element = event.target;
-    const id = element.getAttribute('href');
-    const pos = document.querySelector(id).offsetTop;
+  event.preventDefault();
+  const element = event.target;
+  const id = element.getAttribute('href');
+  const pos = document.querySelector(id).offsetTop;
 
-    window.scroll({
-        top: pos - 120,
-        behavior: "smooth"
-    })
+  window.scroll({
+    top: pos - 120,
+    behavior: "smooth"
+  })
 }
 
 /* Carousel */
-$(document).ready(function(){
+$(document).ready(function () {
   $('.carousel').slick({
     centerMode: true,
-    centerPadding: '60px',
+    centerPadding: '10px',
     slidesToShow: 3,
     autoplay: true,
     autoplaySpeed: 2000,
@@ -48,7 +48,7 @@ $(document).ready(function(){
         breakpoint: 768,
         settings: {
           centerMode: true,
-          ininite: true,
+          centerPadding: '40px',
           slidesToShow: 1
         }
       },
@@ -57,7 +57,8 @@ $(document).ready(function(){
         settings: {
           arrows: false,
           centerMode: true,
-          centerPadding: '40px',
+          centerPadding: '10px',
+          slidesToShow: 1
         }
       }
     ]
