@@ -46,6 +46,10 @@ header {
     display: none;
 }
 
+#mobile-button:hover {
+    cursor: pointer;
+}
+
 .menu {
     margin-top: 35px;
     display: flex;
